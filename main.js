@@ -64,21 +64,21 @@ function createCard(job) {
     levelTag.textContent = job.level;
     jobTags.appendChild(levelTag);
 
-    const languagesTag = document.createElement('p');
-    languagesTag.classList.add('tag');
     const jobLangs = job.languages;
     jobLangs.forEach((lang) => {
-        languagesTag.textContent = lang;
-    })
-    jobTags.appendChild(languagesTag);
+        const langTag = document.createElement('p');
+        langTag.classList.add('tag');
+        langTag.textContent = lang;
+        jobTags.appendChild(langTag);
+    });
 
-    const toolsTag = document.createElement('p');
-    toolsTag.classList.add('tag');
     const jobTools = job.tools;
     jobTools.forEach((tool) => {
-        toolsTag.textContent = tool;
-    })
-    jobTags.appendChild(languagesTag);
+        const toolTag = document.createElement('p');
+        toolTag.classList.add('tag');
+        toolTag.textContent = tool;
+        jobTags.appendChild(toolTag);
+    });
 
     jobCard.appendChild(jobLogo);
     jobCard.appendChild(jobContent);

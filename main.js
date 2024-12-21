@@ -36,9 +36,31 @@ function createCard(job) {
     jobContent.appendChild(jobInfo);
     jobInfo.classList.add('jobCard__info', 'flex');
 
+    const jobInfoTop = document.createElement('h2');
+    jobInfoTop.classList.add('jobInfoTop', 'flex');
+    jobInfo.appendChild(jobInfoTop);
+
     const jobCompany = document.createElement('h2');
     jobCompany.textContent = job.company;
-    jobInfo.appendChild(jobCompany);
+    jobInfoTop.appendChild(jobCompany);
+
+    if (job.new) {
+        const jobIsNew = document.createElement('span');
+        jobIsNew.textContent = 'NEW!';
+        jobIsNew.classList.add('jobIsNew');
+        jobInfoTop.appendChild(jobIsNew);
+    }
+
+    if (job.featured) {
+        const jobIsFeatured = document.createElement('span');
+        jobIsFeatured.textContent = 'FEATURED';
+        jobIsFeatured.classList.add('jobIsFeatured');
+        jobInfoTop.appendChild(jobIsFeatured);
+
+        const featuredJob = document.createElement('div');
+        featuredJob.classList.add('featured')
+        jobCard.appendChild(featuredJob);
+    }
 
     const jobPosition = document.createElement('a');
     jobPosition.textContent = job.position;
@@ -83,12 +105,6 @@ function createCard(job) {
     jobCard.appendChild(jobLogo);
     jobCard.appendChild(jobContent);
     jobCard.appendChild(jobTags);
-
-    if (job.featured) {
-        const featuredJob = document.createElement('div');
-        featuredJob.classList.add('featured')
-        jobCard.appendChild(featuredJob);
-    }
 
     jobList.appendChild(jobCard);
     return card;

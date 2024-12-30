@@ -50,12 +50,9 @@ Users should be able to:
 
 As i move forward, the next step for this project is creating the filtering system to make it more intuitive. Here's what’s planned:  
 
-- **Interactive Filters**:  
-   - Allowing users to click on tags and instantly filter jobs by `role`, `level`, `languages`, or `tools`.  
-   - Supporting multiple filters at once and ensuring the job list updates seamlessly as users interact with the tags.
-
-- **Filter Reset Option**:  
-   - Adding a simple way for users to clear all selected filters in one click, making the experience more user-friendly.
+- **Responsive Design**:  
+   - Ensuring the layout adjusts to different screen sizes.
+   - Making sure the filter container and job list adapt to smaller screens, allowing easy access to filters.
 
 ## Author
 

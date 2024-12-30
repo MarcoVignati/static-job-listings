@@ -1,9 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
 
 body {
+    background-color: hsl(180, 52%, 96%);
     font-family: "League Spartan", serif;
     font-size: 15px;
     font-weight: 500;
+}
+
+header {
+    width: 100%;
+    height: 156px;
+    background-image: url('./images/bg-header-desktop.svg');
+    position: relative;
 }
 
 .flex {
@@ -11,11 +19,86 @@ body {
     align-items: center;
 }
 
+#filter {
+    width: 75vw;
+    padding: 1rem 1.5rem;
+    height: fit-content;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    -webkit-box-shadow: 0px 25px 50px -17px hsla(180, 29%, 50%, 0.25);
+    -moz-box-shadow: 0px 25px 50px -17px hsla(180, 29%, 50%, 0.25);
+    box-shadow: 0px 25px 50px -17px hsla(180, 29%, 50%, 0.25);
+    position: absolute;
+    inset: 0;
+    top: 156px;
+    margin: auto;
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.clearFiltersButton {
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: hsl(180, 29%, 50%);
+    text-decoration: underline;
+    font-weight: 700;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.clearFiltersButton:hover {
+    background-color: transparent;
+}
+
+.filterTagContainer {
+    width: fit-content;
+    height: fit-content;
+    border-radius: 0.25rem;
+    display: flex;
+    background-color: hsl(180, 31%, 95%);
+}
+
+.filterTagContainer:hover > .filterTagRemove {
+    background-color: hsl(180, 14%, 20%);
+}
+
+.filterTagName {
+    width: fit-content;
+    height: fit-content;
+    border-radius: 0.25rem;
+    padding: 0.35rem 0.4rem 0.15rem 0.4rem;
+    background-color: hsl(180, 31%, 95%);
+}
+
+.filterTagRemove {
+    width: fit-content;
+    height: fit-content;
+    border-radius: 0 0.25rem 0.25rem 0;
+    padding: 0.35rem 0.4rem 0.15rem 0.4rem;
+    background-color: hsl(180, 29%, 50%);
+}
+
+.filterTag {
+    border: none;
+    background-color: hsl(180, 31%, 95%);
+}
+
+.filterTag:after {
+    content: url('./images/icon-remove.svg');
+}
+
+.filterTag:hover {
+    background-color: hsl(180, 14%, 20%);
+}
+
 #jobList {
     flex-direction: column;
     gap: 1.25rem;
     padding: 2.5rem;
-    background-color: hsl(180, 52%, 96%);
 }
 
 .jobCard {
@@ -103,6 +186,12 @@ h2 {
     font-weight: 700;
 }
 
+.tag:hover {
+    cursor: pointer;
+    background-color: hsl(180, 29%, 50%);
+    color: hsl(180, 31%, 95%);
+}
+
 .featured {
     position: absolute;
     inset: 0;
@@ -110,4 +199,13 @@ h2 {
     height: 100%;
     border-radius: 0.5rem 0 0 0.5rem;
     background-color: hsl(180, 29%, 50%);
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
 }
